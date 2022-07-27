@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;}
+
+ .container{
+ 	width: 150px;
+ 	padding: 70px 3%;
+ 	display: flex;
+ 	flex-direction: column; 
+ 	text-align: center;
+ } 
+
+ .title{
+ 	    text-align: center;
+   		 margin-bottom:10px;
+   		}
+
+
+ .title h1{
+ 	 background-color: brown;
+    color: white;
+    font-size: 23px;
+    border-radius: 10px;
+    padding: 5px ;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    animation-name: pulse;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    backface-visibility: hidden;
+    margin-left: 600px;
+ }
+
+ .box{
+ 	width: 200px;
+ 	height: 200px;
+ 	background:#000;
+ 	color: #333 
+ }
+
+ .cube-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+	perspective: 1000px;}
+
+.cube-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform-style: preserve-3d;
+	animation-name: spin;
+	transform: translateZ(-100px) rotateZ(45deg) rotateX(45deg);
+	animation-duration: 3s;
+	animation-iteration-count:infinite;}
+
+.cube-face{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	position: absolute;
+	display: block;
+	border: 1px dotted #333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	backface-visibility: hidden;
+	color: #fff;
+	font-size: 60px;
+
+}
+
+
+.cube-face.cube-front{
+	transform:  rotateY(0deg) translateZ(100px);
+	background: #4334eb;
+}
+.cube-face.cube-back{
+	transform: rotateX(180deg) translateZ(100px);
+	background: #288f06;
+}
+.cube-face.cube-left {
+	transform: rotateX(-90deg) translateZ(100px);
+	background:#d161ed;
+}
+.cube-face.cube-right{
+	transform: rotateY(90deg) translateZ(100px);
+	background: #cbd62b;
+}
+.cube-face.cube-top{
+	transform:  rotateX(90deg) translateZ(100px);
+	background: #d63911;
+}
+.cube-face.cube-bottom{
+	transform:  rotateY(-90deg) translateZ(100px);
+	background-color: #63605a;
+}
+
+@keyframes spin{
+	0%{
+		transform: translateZ(-100px) rotateY(360deg) rotateZ(0deg) rotateX(45deg) scale(1.0);
+	}
+	50%{
+		transform: translateZ(-100px) rotateY(180deg) rotateZ(180deg) rotateX(45deg) scale(1.3);
+	}
+	100%{
+		transform: translateZ(-100px) rotateY(0deg) rotateZ(360deg) rotateX(45deg) scale(1.0);
+	}
+}
+
+
+ @keyframes pulse{
+
+ 	0%{
+ 		background-color:#f56c42; 
+ 		transform: rotateY(0);
+ 	}
+ 	25%{
+ 		background-color: #eddc40;
+ 	}
+ 	50%{
+ 		background-color: #287f85;
+ 		transform: rotateY(360deg);
+ 	}
+ 	75%{
+ 		background-color: #004078;
+ 	}
+ 	100%{
+ 		background-color: #610051;
+ 		transform: rotateY(0);
+ 	}
+ }
